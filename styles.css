@@ -1,0 +1,46 @@
+:root {
+    --notebook-size: 16;
+    --div-size-percentage: calc(100% / var(--notebook-size));
+    /* calc(1280px / var(--notebook-size) * 100 / 1280px)%; */
+}
+
+* {
+    box-sizing: border-box;
+    background-color: aquamarine;
+}
+
+#container {
+    width: 1280px;
+    height: 1280px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    /* border: 5px solid salmon; */
+    overflow: hidden;
+    position: relative;
+}
+
+#container div {
+    width: var(--div-size-percentage);
+    height: var(--div-size-percentage);
+    display: absolute;
+    margin: 0;
+    padding: 0;
+    flex: 1 1 auto;
+    border: 3px solid aquamarine;
+}
+
+.divList {
+    height: 10%;
+    width: 10%;
+    /* border: 2px solid aquamarine; */
+    margin: 0;
+    padding: 1;
+} 
+
+
+#button {
+    margin: 10px;
+    font-size: 50px;
+}
