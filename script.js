@@ -1,4 +1,3 @@
-
 function createGrid(size) {
   const containerEl = document.getElementById('container');
   containerEl.innerHTML = '';
@@ -17,6 +16,11 @@ function createGrid(size) {
   }
 }
 
+function calculateBorderWidth(gridSize) {
+  const scale = 3 / Math.sqrt(gridSize); // You can tweak this
+  return Math.max(0.5, scale + 1).toFixed(2);
+}
+
 const newNotebookButton = document.querySelector("#button");
 
 newNotebookButton.addEventListener("click", () => {
@@ -26,12 +30,11 @@ newNotebookButton.addEventListener("click", () => {
 
   if (!isNaN(gridSize) && gridSize >= 2 && gridSize <= 100) {
 
-
     // Update the CSS variable
     document.documentElement.style.setProperty('--notebook-size', gridSize); //size + 'px'
 
-    // document.documentElement.style.setProperty('--div-size-percentage', `calc(100% / ${gridSize})`);
-
+    const borderWidth = calculateBorderWidth(gridSize);
+    document.documentElement.style.setProperty('--border-width', `${borderWidth}px`);
 
     createGrid(gridSize);
   } else {
@@ -42,4 +45,3 @@ newNotebookButton.addEventListener("click", () => {
 });
 
 createGrid(16);
-  // const enterPixels = getComputedStyle(document.documentElement).getPropertyValue('--enter-pixels');
