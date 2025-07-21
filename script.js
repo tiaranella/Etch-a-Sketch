@@ -21,7 +21,7 @@ function calculateBorderWidth(gridSize) {
   return Math.max(0.5, scale + 1).toFixed(2);
 }
 
-const newNotebookButton = document.querySelector("#button");
+const newNotebookButton = document.querySelector("#new-notebook");
 
 newNotebookButton.addEventListener("click", () => {
   let userInput = prompt("Enter the size of new notebook (min. value – 2, max. value – 100)");
@@ -45,3 +45,30 @@ newNotebookButton.addEventListener("click", () => {
 });
 
 createGrid(16);
+
+// document.getElementById("myH1").style.color = "red";
+
+const gridRemover = document.querySelector("#remove-grid");
+let isGridRemoved = false;
+
+gridRemover.addEventListener("click", () => {
+
+  const divs = document.querySelectorAll("#container div");
+
+  if (!isGridRemoved) {
+    // Remove the grid: change border to yellow
+    divs.forEach(div => {
+      div.style.borderColor = "whitesmoke";
+    });
+    isGridRemoved = true;
+  } else {
+    // Restore the grid: change border back to original color
+    divs.forEach(div => {
+      div.style.borderColor = "rgb(229, 233, 236)"; // or use a CSS variable
+    });
+    isGridRemoved = false;
+  }
+
+  // divs.forEach(div => {div.style.borderColor = "whitesmoke";});
+
+});

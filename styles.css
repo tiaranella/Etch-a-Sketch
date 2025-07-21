@@ -18,12 +18,15 @@
     padding: 0;
     overflow: hidden;
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
 }
 
 #container div {
     width: var(--div-size-percentage);
     height: var(--div-size-percentage);
-    display: absolute;
+    /* display: flex; */
     margin: 0;
     padding: 0;
     flex: 1 1 auto;
@@ -39,13 +42,36 @@
 } 
 
 
-#button {
-    margin: 10px;
+#new-notebook {
+    margin: 0;
+    padding: 0;
     font-size: 38px;
+    display: inline-block;
+    margin: 50px auto;
+    border-radius: 10px;
+    border-width: 7px;
+    border-color: rgb(150, 150, 175);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+#remove-grid {
+    margin: 0;
+    padding: 0;
+    font-size: 38px;
+    display: inline-block;
+    margin:  auto;
+    border-radius: 10px;
+    border-width: 7px;
+    border-color: rgb(150, 150, 175);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-/* remove unused code
-change background color
-change dynamically border-grid
-change etch-a-sketch size on page*/
+/* refactoring(ui): improve notebook button layout and add new controls
+
+Adjust appearance and positioning of notebook-button
+Add visual implementation for erase-notebook and clear-notebook buttons
+Implement remove-add grid button functionality  
+
+refactoring: 
+Rename variables for clarity */
+
