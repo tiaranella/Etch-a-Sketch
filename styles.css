@@ -2,6 +2,7 @@
     --notebook-size: 16;
     --div-size-percentage: calc(100% / var(--notebook-size));
     --border-width: 2px;
+    --div-color: whitesmoke;
 }
 
 * {
@@ -31,7 +32,7 @@
     padding: 0;
     flex: 1 1 auto;
     border: var(--border-width) solid rgb(229, 233, 236);
-    background-color: whitesmoke;
+    background-color: var(--div-color);
 }
 
 .divList {
@@ -40,7 +41,6 @@
     margin: 0;
     padding: 1;
 } 
-
 
 #new-notebook {
     margin: 0;
@@ -66,12 +66,28 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* refactoring(ui): improve notebook button layout and add new controls
+#clear-notebook {
+    margin: 0;
+    padding: 0;
+    font-size: 38px;
+    display: inline-block;
+    margin:  auto;
+    border-radius: 10px;
+    border-width: 7px;
+    border-color: rgb(150, 150, 175);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-Adjust appearance and positioning of notebook-button
-Add visual implementation for erase-notebook and clear-notebook buttons
-Implement remove-add grid button functionality  
+#eraser {
+    margin: 0;
+    padding: 0;
+    font-size: 38px;
+    display: inline-block;
+    margin:  auto;
+    border-radius: 10px;
+    border-width: 7px;
+    border-color: rgb(150, 150, 175);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-refactoring: 
-Rename variables for clarity */
-
+/* refactoring: add clear-notebook button functionality */

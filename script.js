@@ -11,7 +11,8 @@ function createGrid(size) {
 
   newDiv.addEventListener('mouseover', () => {
       newDiv.style.backgroundColor = 'violet';
-  });
+    }
+  );
 
   }
 }
@@ -46,8 +47,6 @@ newNotebookButton.addEventListener("click", () => {
 
 createGrid(16);
 
-// document.getElementById("myH1").style.color = "red";
-
 const gridRemover = document.querySelector("#remove-grid");
 let isGridRemoved = false;
 
@@ -68,7 +67,35 @@ gridRemover.addEventListener("click", () => {
     });
     isGridRemoved = false;
   }
+});
 
-  // divs.forEach(div => {div.style.borderColor = "whitesmoke";});
+const clearNotebook = document.querySelector("#clear-notebook");
+
+clearNotebook.addEventListener("click", () => {
+
+  const divs = document.querySelectorAll("#container div");
+  divs.forEach(div => {
+    div.style.backgroundColor = '';
+  });
+
+  document.documentElement.style.setProperty('--div-color', 'whitesmoke');
 
 });
+
+const eraseDivs = document.querySelector('#eraser');
+
+eraseDivs.addEventListener("click", () => {
+
+  // const divs = container.querySelectorAll("#container div");
+  // // const isEraseButtonActive = true;
+
+  //   divs.forEach(div => {
+  isErasing = !isErasing; // Toggle eraser mode
+      // div.addEventListener('mouseover', () => {
+      //   isErasing = true;
+      //   div.style.backgroundColor = 'whitesmoke';
+      // });
+
+  });
+
+
